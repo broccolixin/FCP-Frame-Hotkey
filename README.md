@@ -4,6 +4,22 @@
 
 > Press `1` in Final Cut Pro to open **Share → Save Current Frame** and stop at the macOS Save dialog.
 
+## 快速安装 Skill
+
+在终端运行：
+
+```bash
+npx skills add https://github.com/broccolixin/FCP-Frame-Hotkey
+```
+
+安装完成后重新启动或刷新 Codex，然后输入：
+
+```text
+请使用 fcp-frame-hotkey Skill，在我的 Mac 上配置 Final Cut Pro 按 1 导出当前帧，并停在保存窗口。
+```
+
+> `npx` 安装方式需要电脑已安装 Node.js。没有 ChatGPT 或 Codex 的用户，可直接使用下方的 Hammerspoon 手动安装方法。
+
 ## 功能
 
 - 仅在 **Final Cut Pro 位于前台**时生效
@@ -37,7 +53,13 @@ File → Share → Save Current Frame
 
 ## 安装方法一：作为 Codex Skill 安装
 
-将本仓库克隆或下载到：
+首选使用：
+
+```bash
+npx skills add https://github.com/broccolixin/FCP-Frame-Hotkey
+```
+
+也可以将本仓库克隆或下载到：
 
 ```text
 ~/.codex/skills/fcp-frame-hotkey/
