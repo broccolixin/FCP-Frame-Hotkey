@@ -3,7 +3,7 @@
 
 local FCP_BUNDLE_ID = "com.apple.FinalCut"
 local BUSY = false
-local LOG_PATH = "/Users/xin/FCPFrameHotkey.log"
+local LOG_PATH = (os.getenv("HOME") or "/tmp") .. "/FCPFrameHotkey.log"
 
 local function log(message)
   hs.printf("[FCP Frame Hotkey] %s", message)
@@ -43,8 +43,6 @@ local function exportCurrentFrame()
     log("Save Current Frame menu destination was not found")
     return
   end
-  -- FCP first shows the Share summary. Enter activates “Next…”, then automation stops.
-  -- The user chooses filename/location and confirms Save manually.
   hs.timer.doAfter(1.2, function()
     hs.eventtap.keyStroke({}, "return", 0)
     hs.timer.doAfter(1.5, function()
@@ -54,7 +52,6 @@ local function exportCurrentFrame()
   end)
 end
 
--- Raw event tap is more reliable than enabling/disabling global hotkeys as apps activate.
 -- ANSI 1 = keycode 18; numeric keypad 1 = keycode 83.
 local keyTap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
   local app = hs.application.frontmostApplication()
