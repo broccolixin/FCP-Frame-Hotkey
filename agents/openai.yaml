@@ -1,0 +1,4 @@
+interface:
+  display_name: "FCP Frame Hotkey"
+  short_description: "Configure FCP current-frame export with Hammerspoon"
+  default_prompt: "Use $fcp-frame-hotkey to configure or update my Final Cut Pro frame-export hotkey."
